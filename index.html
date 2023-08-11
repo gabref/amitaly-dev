@@ -719,11 +719,11 @@
         }
     
         /* Customize the font size and color of section headings */
-        #staticPage h3 {
+        /* #staticPage h3 {
             font-size: 20px;
             color: #39a515;
             margin-top: 20px;
-        }
+        } */
 
         /* Cards */
         #colMid .bigBox.boxColumns li {
@@ -774,6 +774,191 @@
                 width: 100% !important;
             }
         }
+
+
+.ami_products_container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+  .ami_products_container { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .ami_products_container { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1100px) {
+  .ami_products_container { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* .ami_card {
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  height: 4rem;
+} */
+
+
+.ami_card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #b2bec3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+  
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; */
+ } 
+
+#staticPage .ami_card .ami_imageWrapper {
+    /* flex: 1; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#staticPage .ami_card a.ami_imageLink img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+  transition: 0.5s ease;
+}
+#staticPage .ami_card:hover a.ami_imageLink img {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+#staticPage .ami_card .ami_content {
+    /* flex: 1; */
+    background-color: #ffffff;
+    padding: 12px 0;
+}
+
+#staticPage .ami_card h2.ami_title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 12px 0;
+}
+
+#staticPage .ami_card .ami_mainPrice {
+  font-size: 24px;
+  color: #e44d26;
+  margin-top: 10px;
+}
+
+#staticPage .ami_card .ami_details {
+  margin-top: 10px;
+}
+
+#staticPage .ami_card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  transition: transform 0.3s, box-shadow 0.3s;
+} 
+
+
+
+        /* for fun */
+                            /* product-container
+                            card
+                            content
+                            new
+                            title
+                            image
+                            text
+                            buy-button
+                            details */
+
+.card .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.card .text {
+  text-align: left;
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+  font-size: 12px;
+}
+
+.buy-button {
+  background-color: #f9ca24;
+  border: none;
+  padding: 1em;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100%;
+}
+.buy-button:hover {
+  box-shadow: 0px 5px 5px #b2bec3;
+  color: #eb4d4b;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+}
+
+.card img {
+  transition: 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.card .details {
+  position: relative;
+  top: 50px;
+  transition: 2s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card:hover .details {
+  opacity: 1;
+  visibility: visible;
+  top: 0px;
+  transition: 2s ease;
+}
+
+.text,
+.title {
+  opacitiy: 1;
+  transition: 0.5s ease;
+}
+
+.card:hover .text,
+.card:hover .title {
+  opacity: 0;
+  transition: 1 ease;
+}
+
+.new {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 5;
+  animation: pulse 2s ease-in infinite;
+}
+
 
 
     </style>
@@ -1201,6 +1386,67 @@
                             <h2 id="mostImportantProducts_Title" class="boxTitle"><span><a
                                         href="default.asp?cmd=search&cmdFilter=1|IVENDUTI&idA=1">Prodotti AVM - Smart
                                         and fast</a></span></h2>
+
+                            <!-- just for fun  -->
+                            <!-- <div class="product-container">
+      <div class="card">
+        <div class="content">
+          
+          <div class="new">
+            <img src="https://www.pngitem.com/pimgs/m/16-169110_brand-new-new-icon-hd-png-download.png">
+          </div>
+       
+        <div class="title">Headphone</div>
+        <div class="image">
+          <img
+            src="https://cdn.idealo.com/folder/Product/200287/8/200287860/s10_produktbild_gross/microsoft-surface-headphones-2.jpg"
+          />
+        </div>
+        <div class="text">
+          This is a headphone. It has noise cancelling properties.
+        </div>
+         </div>
+          <button  class="buy-button details">
+            Buy Now
+          </button>
+     
+      </div>
+
+      Second Product
+
+      <div class="card">
+        <div class="title">Polaroid Camera</div>
+        <div class="image">
+          <img
+            src="https://i.etsystatic.com/10850941/r/il/a85fdd/4310463437/il_fullxfull.4310463437_7fpr.jpg"
+          />
+        </div>
+        <div class="text">
+          This is a polaroid camera. O'l skool style.
+        </div>
+   
+           <button  class="buy-button details">
+            Buy Now
+          </button>
+     
+      </div>
+
+<div class="product-card">
+  <div class="product-image">
+    <img src="files/amitaly_Files/Foto/277283.PNG" alt="Product Image">
+  </div>
+  <div class="product-details">
+    <h2 class="product-title">Product Name</h2>
+    <p class="product-price">$99.99</p>
+  </div>
+</div>
+
+
+
+                            </div> -->
+                            <!-- end of fun -->
+
+
                             <ul>
                                 <li class="column">
                                     <a href="home-page/router-avm-20002767-fritz-box-4040-wifi-mesh-grigio-e-rosso.1.1.238.gp.89887.uw"
@@ -3512,72 +3758,126 @@ width="300" /></a>
 
     <!-- gabre script -->
     <!-- spacing between cards -->
+
     <script>
         const divsColumns = document.querySelectorAll("#colMid .bigBox.boxColumns")
-        const ulElementsBlocks = []
-        const maxLi = 4
-        const exceedingLis = []
 
         divsColumns.forEach(div => {
             const ulElements = div.querySelectorAll('ul')
+            const productsContainer = document.createElement('div');
+            productsContainer.classList.add('ami_products_container');
 
-            ulElements.forEach((ul, ulIndex, uls) => {
+            ulElements.forEach(ul => {
+                const liElements = ul.querySelectorAll('li');
 
-                if (exceedingLis.length > 0) {
-                    exceedingLis.forEach(li => {
-                        ul.insertBefore(li, ul.firstChild)
+                liElements.forEach(li => {
+                    const liClass = li.classList.contains('column') ? 'ami_card' : 'ami_empty';
+                    const productDiv = document.createElement('div');
+                    productDiv.classList.add(liClass);
+
+                    const imgOffer = li.querySelector('.img-offer')
+                    if (imgOffer) imgOffer.remove()
+
+                    const amiContent = document.createElement('div')
+                    amiContent.classList.add('ami_content')
+
+                    const imageWrapper = document.createElement('div')
+                    imageWrapper.classList.add('ami_imageWrapper')
+
+                    Array.from(li.children).forEach(childNode => {
+                        if (childNode.classList.contains('title') || childNode.classList.contains('details')) {
+                            amiContent.appendChild(addAmiPrefixToClassNames(childNode))
+                        } else if (childNode.classList.contains('imageLink')) {
+                            imageWrapper.appendChild(addAmiPrefixToClassNames(childNode))
+                        } else {
+                            productDiv.appendChild(addAmiPrefixToClassNames(childNode))
+                        }
                     })
-                    exceedingLis.length = 0
-                }
 
-                const liElements = ul.querySelectorAll('li.column');
+                    productDiv.appendChild(imageWrapper)
+                    productDiv.appendChild(amiContent)
+                    productsContainer.appendChild(productDiv);
+                });
 
-                if (liElements.length > maxLi) {
-                    for (let i = maxLi; i < liElements.length; i++) {
-                        exceedingLis.push(liElements[i])
-                        ul.removeChild(liElements[i])
-                    }
-                }
+                ul.remove(); // Remove the original ul element
+            });
 
-                const liEmpty = ul.querySelectorAll('li.empty')
-                liEmpty.forEach(li => {
-                    ul.removeChild(li)
-                })
-                
-                // check if is last ul
-                if (uls.length === ulIndex + 1) {
-
-                    if (exceedingLis.length > 0) {
-                        const newUl = document.createElement('ul')
-                        let lisToMove = Math.min(maxLi, exceedingLis.length)
-
-                        for (let i = 0; i < lisToMove; i++) {
-                            const newLi = document.createElement('li')
-                            newLi.className = 'column'
-                            newLi.innerHTML = exceedingLis[i].innerHTML
-                            newUl.appendChild(newLi)
-                        }
-
-                        if (lisToMove < maxLi) {
-                            const remainingLisToAdd = maxLi - lisToMove
-                            console.log(remainingLisToAdd)
-                            for (let i = 0; i < remainingLisToAdd; ++i) {
-                                const emptyLi = document.createElement('li');
-                                emptyLi.className = 'empty';
-                                newUl.appendChild(emptyLi);
-                            }
-                        }
-
-
-                        for (let i = 0; i < lisToMove; i++) {
-                            exceedingLis.shift()
-                        }
-
-                        div.appendChild(newUl)
-                    }
-                }
-            })
+            div.appendChild(productsContainer);
         })
+
+        function addAmiPrefixToClassNames(element) {
+            if (element.nodeType === Node.ELEMENT_NODE) {
+                const originalClasses = element.getAttribute('class');
+                if (originalClasses) {
+                    const newClasses = originalClasses.split(' ').map(className => `ami_${className}`).join(' ');
+                    element.setAttribute('class', newClasses);
+                }
+
+                // Recursively process child nodes
+                Array.from(element.children).forEach(childNode => {
+                    addAmiPrefixToClassNames(childNode);
+                });
+            }
+            return element;
+        }
+
+            // ulElements.forEach((ul, ulIndex, uls) => {
+
+            //     if (exceedingLis.length > 0) {
+            //         exceedingLis.forEach(li => {
+            //             ul.insertBefore(li, ul.firstChild)
+            //         })
+            //         exceedingLis.length = 0
+            //     }
+
+            //     const liElements = ul.querySelectorAll('li.column');
+
+            //     if (liElements.length > maxLi) {
+            //         for (let i = maxLi; i < liElements.length; i++) {
+            //             exceedingLis.push(liElements[i])
+            //             ul.removeChild(liElements[i])
+            //         }
+            //     }
+
+            //     const liEmpty = ul.querySelectorAll('li.empty')
+            //     liEmpty.forEach(li => {
+            //         ul.removeChild(li)
+            //     })
+                
+            //     // check if is last ul
+            //     if (uls.length === ulIndex + 1) {
+
+            //         if (exceedingLis.length > 0) {
+            //             const newUl = document.createElement('ul')
+            //             let lisToMove = Math.min(maxLi, exceedingLis.length)
+
+            //             for (let i = 0; i < lisToMove; i++) {
+            //                 const newLi = document.createElement('li')
+            //                 newLi.className = 'column'
+            //                 newLi.innerHTML = exceedingLis[i].innerHTML
+            //                 newUl.appendChild(newLi)
+            //             }
+
+            //             if (lisToMove < maxLi) {
+            //                 const remainingLisToAdd = maxLi - lisToMove
+            //                 console.log(remainingLisToAdd)
+            //                 for (let i = 0; i < remainingLisToAdd; ++i) {
+            //                     const emptyLi = document.createElement('li');
+            //                     emptyLi.className = 'empty';
+            //                     newUl.appendChild(emptyLi);
+            //                 }
+            //             }
+
+
+            //             for (let i = 0; i < lisToMove; i++) {
+            //                 exceedingLis.shift()
+            //             }
+
+            //             div.appendChild(newUl)
+            //         }
+            //     }
+            // })
+        // })
 
     </script>
 
