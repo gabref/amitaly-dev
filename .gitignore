@@ -1,0 +1,3 @@
+# Include only HTML files
+*
+!*.html
